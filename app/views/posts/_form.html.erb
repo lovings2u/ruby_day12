@@ -1,0 +1,17 @@
+<%= form_for(post, html: {class: 'text-center'}) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contents %>
+    <%= f.text_area :contents, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit '작성하기', class: 'btn btn-info' %>
+    <%= link_to '뒤로가기', posts_path, class: 'btn btn-warning text-white' %>
+  </div>
+<% end %>

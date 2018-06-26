@@ -1,0 +1,13 @@
+<h1>Posts</h1>
+
+<ul class="list-group">
+  <% @posts.each do |post| %>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <%= link_to "#{post.title}", post_path(post) %>
+    <span class="badge badge-primary badge-pill"><%= post.comments.count %></span>
+  </li>
+  <% end %>
+</ul>
+<div class="text-center">
+<%= link_to 'New Post', new_post_path, class: 'btn btn-info' %>
+</div>

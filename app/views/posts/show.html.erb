@@ -1,0 +1,45 @@
+<h1>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</h1>
+<hr/>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @post.contents %>
+</p>
+
+<%= link_to '수정', edit_post_path(@post), class: 'btn btn-warning text-white' %> |
+<%= link_to '목록', posts_path, class: 'btn btn-info' %>|
+<%= link_to '삭제', post_path(@post), class: 'btn btn-danger', method: 'DELETE', data: {confirm: "삭제하시겠습니까?"} %>
+
+<hr>
+<!--# 댓글 입력-->
+<%= render 'comments/form', post: @post %>
+
+<br>
+<!--# 댓글 리스트-->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Content</th>
+      <th scope="col">Button</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+  <% @post.comments.each do |comment| %>
+    <tr>
+      <th scope="row"><%= comment.id %>
+      <td><%= comment.content %>
+      <td><%= link_to "삭제", "/comments/#{comment.id}", 
+      method: "delete" %><td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+  
