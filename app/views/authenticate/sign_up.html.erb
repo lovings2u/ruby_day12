@@ -1,0 +1,7 @@
+<h1>회원가입</h1>
+<%= form_tag do %>
+    <%= text_field_tag :user_name %><br/>
+    <%= password_field_tag :password %><br/>
+    <%= password_field_tag :password_confirmation %><br/>
+    <%= submit_tag 'Sign Up' %>
+<% end %>

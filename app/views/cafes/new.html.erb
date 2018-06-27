@@ -1,0 +1,6 @@
+<h1>카페 개설하기</h1>
+<%= form_for(@cafe, url: cafes_path) do |f| %>
+    <%= f.text_field :title %><br/>
+    <%= f.text_area :description %><br/>
+    <%= f.submit 'Create Cafe' %>
+<% end %>
